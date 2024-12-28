@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Huấn Hà</title>
+    <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="falling-leaves">
+    <span class="leaf">🍁</span>
+    <span class="leaf">🍁</span>
+    <span class="leaf">🍁</span>
+    <span class="leaf">🍁</span>
+    <span class="leaf">🍁</span>
+    <!-- Bạn có thể thêm nhiều biểu tượng 🍁 nữa ở đây -->
+</div>
+<!-- Chat Icon -->
+<div class="chat-icon">
+    <a href="https://zaloapp.com/qr/p/1s3nnmtozvd1l?src=qr" target="_blank">
+        <img src="https://i.imgur.com/8mc2sgH.png" alt="Zalo Chat" class="chat-icon-img">
+    </a>
+</div>
+<!-- Phần tử để nhúng video YouTube và phát âm thanh -->
+    <div class="youtube-container">
+        <iframe id="youtubePlayer" width="560" height="315" 
+            src="https://youtu.be/SJvqxMOoP_0?si=rQOu6smRpC1vAfPQ_ID" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+    </div>
+    <!-- Hiệu ứng particles -->
+    <div id="particles-js"></div>
+<!-- Phần Logo và Tên -->
+    <div class="header-logo">
+        <div class="logo"></div>
+        <div class="name-with-icon">
+            <span>Hà Văn Huấn</span>
+            <i class="fas fa-check-circle check-icon"></i>
+        </div>
+    </div>
+    <!-- Khung menu chính -->
+    <div class="menu">
+        <h1 class="glow-text">SHOP POCO EX</h1>
+        <marquee class="scrolling-text">Chào Các Thương đế Đã Đến Với Shop Của Mình Nhé Hãy Tham Khảo Và ủng hộ tớ nhé 🍁 </marquee>
+
+        <!-- Vùng cuộn cho bảng giá files -->
+        <div class="scroll-container">
+            <div class="pricing">
+                <!-- File 1 -->
+                <div class="pricing-item">
+                    <img src="https://i.imgur.com/jURokpN.png" alt="File 1">
+                    <p>Aimlock Stx - 100,000 VND</p>
+                    <button class="buy-btn" onclick="showPaymentInfo('File Aimlock Stx', '100,000 VND')">Mua Ngay</button>
+                </div>
+
+                <!-- File 2 -->
+                <div class="pricing-item">
+                    <img src="https://i.imgur.com/q358ZVI.png" alt="File 2">
+                    <p>File - 200,000 VND</p>
+                    <button class="buy-btn" onclick="showPaymentInfo('File AimSuper', '200,000 VND')">Mua Ngay</button>
+                </div>
+
+                <!-- File 3 -->
+                <div class="pricing-item">
+                    <img src="https://i.imgur.com/R9JT5ev.png" alt="File 3">
+                    <p>File - 300,000 VND</p>
+                    <button class="buy-btn" onclick="showPaymentInfo('File Aim Full Map', '300,000 VND')">Mua Ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Hộp thông báo thanh toán -->
+<div class="payment-modal hidden" id="paymentModal">
+    <div class="payment-content">
+        <h3>Thông Tin Thanh Toán</h3>
+        <p><strong>Tên File:</strong> <span id="modalFileName">File Name</span></p>
+        <p><strong>Giá:</strong> <span id="modalFilePrice">0 VND</span></p>
+        <p><strong>Ngân Hàng:</strong> Mbbank - 0325575642 - Hà Văn Huấn</p>
+        <p><strong>Ví Momo:</strong> 0325575642 - Hà Văn Huấn</p>
+        <p><strong>Email:</strong> vanhuanha56@gmail.com</p>
+<!-- Phần Logo và Tên -->
+    <div class="header-logo">
+        <div class="logo"></div>
+        <div class="name-with-icon">
+            <span>Hà Văn Huấn</span>
+            <i class="fas fa-check-circle check-icon"></i>
+        </div>
+    </div>
+<div class="function-box">
+    <!-- Label link -->
+    <label for="login-link" class="label-link"></label>
+    <a id="login-link" href="https://www.facebook.com/share/18WPfhxtvS/?mibextid=wwXIfr" class="hidden-link">Faceboock</a>
+    
+    <!-- Label link -->
+    <label for="register-link" class="label-link"></label>
+    <a id="register-link" href="https://t.me/suporthuanha" class="hidden-link">Telegram</a>
+    
+    <!-- Label link -->
+    <label for="contact-link" class="label-link"></label>
+    <a id="contact-link" href="https://zaloapp.com/qr/p/1s3nnmtozvd1l?src=qr" class="hidden-link">Zalo</a>
+</div>
+
+        <button class="close-btn" onclick="closePaymentModal()">Đóng</button>
+    </div>
+</div>
+    <!-- Liên kết mạng xã hội -->
+    <div class="social-links">
+        <h3>Liên Hệ Với Chúng Tôi</h3>
+        <div class="links">
+            <a href="https://www.facebook.com/share/19zJjGfvAY/?mibextid=wwXIfr" target="_blank" class="social-btn facebook">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="https://zaloapp.com/qr/p/1s3nnmtozvd1l?src=qr" target="_blank" class="social-btn zalo">
+                <i class="fas fa-comment"></i> Zalo
+            </a>
+            <a href="https://t.me/suporthuanha" target="_blank" class="social-btn telegram">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://www.tiktok.com/@exzed.huanha?_t=8saAtUEIk89&_r=1" target="_blank" class="social-btn tiktok">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+        </div>
+    </div>
+
+<!-- Thông báo chào mừng -->
+<div class="welcome-popup hidden" id="welcomePopup">
+    <div class="popup-content">
+        <img src="https://i.imgur.com/h34b5ib.png" alt="Huấn" class="popup-image">
+        <div class="popup-text">
+            <marquee behavior="scroll" direction="left">
+                <h3>Chào Các Thương đế Của Huấn Nhé 🫶</h3>
+            </marquee>
+            <p>Chúc bạn một ngày tốt lành! Hãy khám phá các sản phẩm của chúng tôi.</p>
+        </div>
+<!-- Phần Logo và Tên -->
+    <div class="header-logo">
+        <div class="logo"></div>
+        <div class="name-with-icon">
+            <span>Hà Văn Huấn</span>
+            <i class="fas fa-check-circle check-icon"></i>
+        </div>
+    </div>
+<div class="function-box">
+    <!-- Label link -->
+    <label for="login-link" class="label-link"></label>
+    <a id="login-link" href="https://www.facebook.com/share/18WPfhxtvS/?mibextid=wwXIfr" class="hidden-link">Faceboock</a>
+    
+    <!-- Label link -->
+    <label for="register-link" class="label-link"></label>
+    <a id="register-link" href="https://t.me/suporthuanha" class="hidden-link">Telegram</a>
+    
+    <!-- Label link -->
+    <label for="contact-link" class="label-link"></label>
+    <a id="contact-link" href="https://zaloapp.com/qr/p/1s3nnmtozvd1l?src=qr" class="hidden-link">Zalo</a>
+</div>
+        <button class="close-btn" onclick="closeWelcomePopup()">Đóng</button>
+    </div>
+</div>
+    <!-- Chữ watermark ở footer -->
+<footer>
+    <p class="watermark">© 2024 Cửa hàng bán files. Bản quyền thuộc về Poco Ex New*Tick</p>
+</footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles.js loaded!');
+        });
+    </script>
+    <script>
+        // Cấu hình và khởi tạo Particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,  // Số lượng particles
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"  // Màu sắc của particles
+                },
+                "shape": {
+                    "type": "circle",  // Hình dạng particles (có thể thay đổi thành "triangle", "edge", "polygon", v.v.)
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 4,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",  // Màu của các đường nối particles
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

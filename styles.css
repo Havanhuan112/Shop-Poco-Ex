@@ -1,0 +1,468 @@
+/* Tổng thể của trang */
+body {
+    background: linear-gradient(to right, #1d4350, #a43931); /* Màu nền gradient */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hiệu ứng particles */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+/* Khung menu chính */
+.menu {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Tiêu đề với hiệu ứng phát sáng */
+.glow-text {
+    font-size: 3rem;
+    text-shadow: 0 0 5px #ff9, 0 0 15px #f39, 0 0 20px #c6f;
+}
+
+/* Chữ chạy marquee */
+.scrolling-text {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Vùng cuộn bảng giá */
+.scroll-container {
+    overflow-y: auto;
+    max-height: 600px;
+    margin: 20px auto;
+    width: 90%;
+}
+
+/* Bảng giá files */
+.pricing {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Mỗi mục trong bảng giá */
+.pricing-item {
+    margin: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Hình ảnh file */
+.pricing-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Nút mua */
+.pricing-item button {
+    background: linear-gradient(45deg, #ff9, #f39);
+    border: none;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pricing-item button:hover {
+    background: linear-gradient(45deg, #f39, #ff9);
+}
+
+/* Khu vực liên kết mạng xã hội */
+.social-links {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.social-links h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #ff9;
+}
+
+.social-links .links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-links .social-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.social-links .social-btn i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.social-links .social-btn:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Modal thanh toán */
+.payment-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.payment-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.payment-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(0.8);
+    animation: modalScaleUp 0.3s forwards;
+}
+
+.payment-content h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.payment-content p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.payment-content .close-btn {
+    background: linear-gradient(45deg, #f39, #ff9);
+    border: none;
+    padding: 10px 15px;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.payment-content .close-btn:hover {
+    background: linear-gradient(45deg, #ff9, #f39);
+}
+
+@keyframes modalScaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Thông báo chào mừng */
+.welcome-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.welcome-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: popupSlideIn 0.5s ease-out;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.popup-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.popup-text h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.popup-text p {
+    color: #333;
+    font-size: 1rem;
+}
+
+.close-btn {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+}
+
+@keyframes popupSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Định dạng footer */
+footer {
+    position: fixed; /* Đặt footer cố định ở dưới cùng */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền mờ */
+    padding: 5px 0;
+}
+
+/* Định dạng watermark (chữ bản quyền) */
+.watermark {
+    color: rgba(255, 255, 255, 0.5); /* Màu trắng mờ */
+    font-size: 8px;
+    font-family: Arial, sans-serif;
+}
+.youtube-container iframe {
+    width: 0;
+    height: 0;
+    border: none;
+}
+/* Định dạng phần logo và tên */
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: none;
+            color: red;
+            font-size: 24px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-image: url('https://i.imgur.com/g4nsCRO.jpeg'); /* Thay bằng URL hình ảnh logo của bạn */
+            background-size: cover;
+            margin-right: 10px;
+        }
+
+        .name-with-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .check-icon {
+            color: #1DA1F2; /* Màu xanh tích */
+            margin-left: 10px;
+        }
+
+        /* Phần chỉnh sửa cho text nếu muốn */
+        .name-with-icon span {
+            font-weight: bold;
+}
+/* Chat Icon - Hiển thị ở góc dưới bên phải */
+/* Chat Icon - Hiển thị ở góc dưới bên phải */
+.chat-icon {
+    position: fixed;
+    bottom: 20px; /* Cách đáy 20px */
+    right: 20px; /* Cách phải 20px */
+    z-index: 1000; /* Đảm bảo icon nằm trên cùng */
+    animation: bounce 2s infinite; /* Thêm hiệu ứng nhảy lên xuống */
+}
+
+/* Hình ảnh của chat icon */
+.chat-icon-img {
+    width: 60px; /* Độ rộng hình ảnh */
+    height: 60px; /* Chiều cao hình ảnh */
+    border-radius: 50%; /* Làm tròn hình ảnh */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+    cursor: pointer; /* Hiển thị con trỏ chuột khi hover */
+    transition: transform 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+/* Hiệu ứng hover khi người dùng di chuột qua icon */
+.chat-icon-img:hover {
+    transform: scale(1.1); /* Tăng kích thước icon khi hover */
+}
+
+/* Tạo hiệu ứng nhảy lên xuống */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Vị trí ban đầu */
+    }
+    25% {
+        transform: translateY(-10px); /* Nhảy lên 10px */
+    }
+    50% {
+        transform: translateY(0); /* Quay lại vị trí ban đầu */
+    }
+    75% {
+        transform: translateY(-10px); /* Nhảy lên 10px */
+    }
+    100% {
+        transform: translateY(0); /* Quay lại vị trí ban đầu */
+    }
+}
+/* Container chứa các lá rơi */
+.falling-leaves {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none; /* Không cho phép tương tác với các phần tử này */
+    z-index: 9999;
+}
+
+/* Các lá cây 🍁 */
+.leaf {
+    position: absolute;
+    font-size: 30px;
+    animation: fall 5s infinite ease-in;
+    opacity: 0;
+}
+
+/* Định nghĩa chuyển động của các lá */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg); /* Bắt đầu từ phía trên */
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(100px) rotate(10deg);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(200px) rotate(20deg);
+        opacity: 0.8;
+    }
+    75% {
+        transform: translateY(300px) rotate(30deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(400px) rotate(40deg); /* Kết thúc ở phía dưới */
+        opacity: 0; /* Lá mờ dần khi gần chạm mặt đất */
+    }
+}
+
+/* Làm mỗi lá rơi ở vị trí ngẫu nhiên */
+.leaf:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+
+.leaf:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+    animation-duration: 5s;
+}
+
+.leaf:nth-child(3) {
+    left: 50%;
+    animation-delay: 3s;
+    animation-duration: 7s;
+}
+
+.leaf:nth-child(4) {
+    left: 70%;
+    animation-delay: 1s;
+    animation-duration: 6s;
+}
+
+.leaf:nth-child(5) {
+    left: 90%;
+    animation-delay: 4s;
+    animation-duration: 5s;
+}
